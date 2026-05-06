@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulkit Sanghi & Associates – Advocates & Legal Consultants, Delhi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-pale: #f5e9c9;
+    --dark: #0D0D0D;
+    --dark2: #161410;
+    --dark3: #1f1b16;
+    --cream: #FAF6EE;
+    --cream2: #F2EBD9;
+    --text: #2a2318;
+    --muted: #7a6e60;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--dark2);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 20px 60px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 80%, rgba(201,168,76,0.12) 0%, transparent 70%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 59px,
+        rgba(201,168,76,0.05) 60px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 59px,
+        rgba(201,168,76,0.05) 60px
+      );
+  }
+
+  .hero-scales {
+    position: absolute;
+    font-size: 320px;
+    color: rgba(201,168,76,0.04);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hero-bar {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto 28px;
+    animation: barGrow 1.2s ease forwards;
+    transform-origin: center;
+    transform: scaleX(0);
+  }
+
+  @keyframes barGrow {
+    to { transform: scaleX(1); }
+  }
+
+  .hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.3s ease forwards;
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 7vw, 82px);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.1;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.5s ease forwards;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-amp {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 52px);
+    color: var(--gold);
+    display: block;
+    margin: 4px 0;
+  }
+
+  .hero-sub {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(13px, 2vw, 17px);
+    letter-spacing: 6px;
+    color: rgba(250,246,238,0.5);
+    margin-top: 18px;
+    font-weight: 400;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.7s ease forwards;
+  }
+
+  .hero-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 36px auto;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.9s ease forwards;
+  }
+
+  .hero-divider span {
+    height: 1px;
+    width: 80px;
+    background: linear-gradient(to right, transparent, var(--gold));
+  }
+
+  .hero-divider span:last-child {
+    background: linear-gradient(to left, transparent, var(--gold));
+  }
+
+  .hero-divider i {
+    font-style: normal;
+    color: var(--gold);
+    font-size: 18px;
+  }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 2.5vw, 22px);
+    color: rgba(250,246,238,0.7);
+    font-style: italic;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 0.9s 1.1s ease forwards;
+    max-width: 520px;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeUp 0.9s 1.3s ease forwards;
+  }
+
+  .btn-primary {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dark);
+    background: var(--gold);
+    border: none;
+    padding: 16px 36px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: transparent;
+    border: 1px solid rgba(201,168,76,0.5);
+    padding: 16px 36px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.07);
+    transform: translateY(-2px);
+  }
+
+  .hero-since {
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: rgba(201,168,76,0.5);
+    letter-spacing: 2px;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: rgba(201,168,76,0.4);
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-family: 'Jost', sans-serif;
+    animation: fadeUp 1s 2s ease forwards;
+    opacity: 0;
+  }
+
+  .scroll-hint::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(201,168,76,0.4), transparent);
+    animation: scrollLine 1.5s ease infinite;
+  }
+
+  @keyframes scrollLine {
+    0% { opacity: 1; transform: scaleY(1) translateY(0); }
+    100% { opacity: 0; transform: scaleY(0.5) translateY(10px); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    transition: all 0.4s ease;
+  }
+
+  nav.scrolled {
+    background: rgba(13,13,13,0.95);
+    backdrop-filter: blur(12px);
+    padding: 14px 48px;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .nav-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(250,246,238,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ─── SECTION BASE ─── */
+  section { padding: 100px 20px; }
+
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--text);
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  /* ─── ABOUT ─── */
+  .about {
+    background: var(--cream2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about::before {
+    content: '"';
+    position: absolute;
+    top: -40px;
+    left: -20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 400px;
+    color: rgba(201,168,76,0.06);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .about-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-left {}
+
+  .about-right p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: var(--muted);
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+
+  .about-right p strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .about-stat-row {
+    display: flex;
+    gap: 40px;
+    margin-top: 36px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .about-stat {}
+
+  .about-stat .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .about-stat .lbl {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ─── PRACTICE AREAS ─── */
+  .practice {
+    background: var(--dark2);
+  }
+
+  .practice .section-title { color: var(--cream); }
+  .practice .section-label { color: var(--gold); }
+
+  .practice-header {
+    max-width: 1100px;
+    margin: 0 auto 64px;
+  }
+
+  .practice-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .practice-card {
+    background: var(--dark3);
+    padding: 44px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    cursor: default;
+  }
+
+  .practice-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--gold);
+    transition: width 0.4s ease;
+  }
+
+  .practice-card:hover {
+    background: #1a1710;
+    transform: translateY(-4px);
+  }
+
+  .practice-card:hover::after { width: 100%; }
+
+  .pc-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .pc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .pc-desc {
+    font-size: 14px;
+    line-height: 1.75;
+    color: rgba(250,246,238,0.45);
+    font-weight: 300;
+  }
+
+  .pc-num {
+    position: absolute;
+    top: 24px; right: 28px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: rgba(201,168,76,0.1);
+    line-height: 1;
+  }
+
+  /* ─── WHY US ─── */
+  .why {
+    background: var(--cream);
+  }
+
+  .why-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .why-list { margin-top: 40px; }
+
+  .why-item {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 36px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .why-item:last-child { border-bottom: none; }
+
+  .why-icon {
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(201,168,76,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    color: var(--gold);
+  }
+
+  .why-text h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .why-text p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .why-right-img {
+    position: sticky;
+    top: 100px;
+  }
+
+  .why-ornament {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: var(--dark2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(201,168,76,0.3);
+  }
+
+  .why-ornament img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .why-ornament::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.12) 0%, transparent 50%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .why-ornament-text {
+    text-align: center;
+    padding: 40px;
+    z-index: 1;
+  }
+
+  .why-ornament-text blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.5;
+  }
+
+  .why-ornament-text cite {
+    display: block;
+    margin-top: 20px;
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  /* ─── COURTS ─── */
+  .courts {
+    background: var(--cream2);
+    padding: 80px 20px;
+  }
+
+  .courts-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .courts-inner .section-title { margin-bottom: 48px; }
+
+  .courts-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .court-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--text);
+    border: 1px solid rgba(201,168,76,0.4);
+    padding: 12px 24px;
+    background: white;
+    transition: all 0.3s ease;
+  }
+
+  .court-tag:hover {
+    background: var(--gold);
+    color: var(--dark);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+  }
+
+  /* ─── CONTACT ─── */
+  .contact {
+    background: var(--dark2);
+    padding: 100px 20px;
+  }
+
+  .contact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+
+  .contact-left .section-title { color: var(--cream); }
+  .contact-left .section-label { color: var(--gold); }
+
+  .contact-info { margin-top: 44px; }
+
+  .contact-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+    color: var(--gold);
+  }
+
+  .contact-detail h5 {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .contact-detail p {
+    font-size: 14px;
+    color: rgba(250,246,238,0.65);
+    line-height: 1.6;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-field label {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.2);
+    color: var(--cream);
+    padding: 14px 16px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s;
+    resize: none;
+    -webkit-appearance: none;
+  }
+
+  .form-field select option {
+    background: var(--dark2);
+    color: var(--cream);
+  }
+
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.05);
+  }
+
+  .form-field input::placeholder,
+  .form-field textarea::placeholder {
+    color: rgba(250,246,238,0.25);
+  }
+
+  .form-submit {
+    margin-top: 8px;
+  }
+
+  .form-submit .btn-primary {
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--dark);
+    padding: 36px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(201,168,76,0.1);
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  footer .foot-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 2px;
+  }
+
+  footer .foot-copy {
+    font-size: 12px;
+    color: rgba(250,246,238,0.3);
+    letter-spacing: 1px;
+  }
+
+  footer .foot-bar-of-delhi {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: rgba(250,246,238,0.4);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    nav.scrolled { padding: 12px 20px; }
+    .nav-links { display: none; }
+
+    .about-inner,
+    .why-inner,
+    .contact-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .practice-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    .why-right-img { display: none; }
+
+    footer {
+      flex-direction: column;
+      text-align: center;
+      padding: 24px 20px;
+    }
+
+    section { padding: 60px 20px; }
+  }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+  .reveal-delay-6 { transition-delay: 0.6s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo">PS&A</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#practice">Practice Areas</a></li>
+    <li><a href="#courts">Courts</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-scales">⚖</div>
+  <div class="hero-bar"></div>
+  <p class="hero-eyebrow">Advocates & Legal Consultants · New Delhi</p>
+  <h1 class="hero-name">
+    Pulkit Sanghi
+    <span class="hero-amp">&amp;</span>
+    <em>Associates</em>
+  </h1>
+  <p class="hero-sub">Advocates · New Delhi · Est. 2022</p>
+  <div class="hero-divider">
+    <span></span>
+    <i>⚖</i>
+    <span></span>
+  </div>
+  <p class="hero-tagline">Committed to justice, guided by law, defined by integrity.</p>
+  <div class="hero-cta">
+    <a href="#practice" class="btn-primary">Practice Areas</a>
+    <a href="#contact" class="btn-outline">Consult Us</a>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-left reveal">
+      <span class="section-label">About the Firm</span>
+      <h2 class="section-title">A Practice Built on<br><em>Principle & Purpose</em></h2>
+    </div>
+    <div class="about-right reveal reveal-delay-2">
+      <p>
+        <strong>Pulkit Sanghi & Associates</strong> is a Delhi-based law firm offering comprehensive legal services across a wide spectrum of civil, criminal, and special matters. Founded in 2022, the firm has rapidly established a reputation for diligent advocacy and client-centric counsel.
+      </p>
+      <p>
+        Operating before the Courts of Delhi — including the District Courts, Consumer Forums, Labour Courts, and various Tribunals — we bring focused legal expertise and a thorough understanding of the evolving Indian legal landscape to every matter entrusted to us.
+      </p>
+      <p>
+        We believe that every client deserves sincere attention, transparent communication, and relentless representation. Whether the matter is routine or complex, we approach it with the same dedication to excellence.
+      </p>
+      <div class="about-stat-row">
+        <div class="about-stat">
+          <div class="num">2022</div>
+          <div class="lbl">Established</div>
+        </div>
+        <div class="about-stat">
+          <div class="num">6+</div>
+          <div class="lbl">Practice Areas</div>
+        </div>
+        <div class="about-stat">
+          <div class="num">Delhi</div>
+          <div class="lbl">Based & Operating</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE AREAS -->
+<section class="practice" id="practice">
+  <div class="practice-header reveal">
+    <span class="section-label">What We Do</span>
+    <h2 class="section-title">Practice <em>Areas</em></h2>
+  </div>
+  <div class="practice-grid">
+    <div class="practice-card reveal reveal-delay-1">
+      <span class="pc-num">01</span>
+      <span class="pc-icon">⚖️</span>
+      <div class="pc-title">Civil Litigation</div>
+      <p class="pc-desc">Property disputes, injunctions, declarations, suits for recovery, partition matters, and all civil proceedings before courts of competent jurisdiction.</p>
+    </div>
+    <div class="practice-card reveal reveal-delay-2">
+      <span class="pc-num">02</span>
+      <span class="pc-icon">🏛️</span>
+      <div class="pc-title">Criminal Defence</div>
+      <p class="pc-desc">Bail applications, anticipatory bail, trial defence, appeals, and revisions in criminal matters under IPC, BNSS, and special statutes.</p>
+    </div>
+    <div class="practice-card reveal reveal-delay-3">
+      <span class="pc-num">03</span>
+      <span class="pc-icon">💍</span>
+      <div class="pc-title">Matrimonial Matters</div>
+      <p class="pc-desc">Divorce proceedings, judicial separation, maintenance & alimony, child custody, domestic violence cases, and matrimonial property disputes.</p>
+    </div>
+    <div class="practice-card reveal reveal-delay-4">
+      <span class="pc-num">04</span>
+      <span class="pc-icon">📃</span>
+      <div class="pc-title">Cheque Bounce (NI Act)</div>
+      <p class="pc-desc">Comprehensive representation in Section 138 NI Act cases — from filing of complaints and trial to appeals — for both complainants and accused persons.</p>
+    </div>
+    <div class="practice-card reveal reveal-delay-5">
+      <span class="pc-num">05</span>
+      <span class="pc-icon">👷</span>
+      <div class="pc-title">Labour & Employment</div>
+      <p class="pc-desc">Disputes before Labour Courts and Industrial Tribunals involving wrongful termination, workmen compensation, retrenchment, and service matters.</p>
+    </div>
+    <div class="practice-card reveal reveal-delay-6">
+      <span class="pc-num">06</span>
+      <span class="pc-icon">🛡️</span>
+      <div class="pc-title">Consumer Protection</div>
+      <p class="pc-desc">Representing consumers before District, State, and National Consumer Disputes Redressal Commissions in matters of deficiency of service and unfair trade practices.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="why-inner">
+    <div>
+      <div class="reveal">
+        <span class="section-label">Why Choose Us</span>
+        <h2 class="section-title">Our Commitment<br>to <em>You</em></h2>
+      </div>
+      <div class="why-list">
+        <div class="why-item reveal reveal-delay-1">
+          <div class="why-icon">✦</div>
+          <div class="why-text">
+            <h4>Client-First Approach</h4>
+            <p>We listen before we advise. Every case is unique and receives undivided personal attention from our advocates — not just a junior or clerk.</p>
+          </div>
+        </div>
+        <div class="why-item reveal reveal-delay-2">
+          <div class="why-icon">⚖</div>
+          <div class="why-text">
+            <h4>Honest & Transparent Counsel</h4>
+            <p>We give you a realistic assessment of your legal position — no false promises. You will always know where your matter stands and why.</p>
+          </div>
+        </div>
+        <div class="why-item reveal reveal-delay-3">
+          <div class="why-icon">📋</div>
+          <div class="why-text">
+            <h4>Thorough Case Preparation</h4>
+            <p>Meticulous research, well-drafted pleadings, and thorough document management form the backbone of our representation strategy.</p>
+          </div>
+        </div>
+        <div class="why-item reveal reveal-delay-4">
+          <div class="why-icon">🏛</div>
+          <div class="why-text">
+            <h4>Active Delhi Court Presence</h4>
+            <p>With regular appearance before District Courts, Consumer Forums, Labour Courts and Tribunals across Delhi, we are familiar with local procedures and practice.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-right-img reveal reveal-delay-3">
+      <div class="why-ornament">
+        <img src="image.jpeg" alt="Pulkit Sanghi, Advocate and Founder">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURTS -->
+<section class="courts" id="courts">
+  <div class="courts-inner">
+    <div class="reveal">
+      <span class="section-label">Jurisdiction</span>
+      <h2 class="section-title">Courts &amp; <em>Forums</em> We Appear Before</h2>
+    </div>
+    <div class="courts-list reveal reveal-delay-2">
+      <div class="court-tag">Delhi District Courts</div>
+      <div class="court-tag">Delhi High Court</div>
+      <div class="court-tag">Metropolitan Magistrate Courts</div>
+      <div class="court-tag">Civil Judge Courts</div>
+      <div class="court-tag">Labour Courts, Delhi</div>
+      <div class="court-tag">Industrial Tribunal</div>
+      <div class="court-tag">District Consumer Commission</div>
+      <div class="court-tag">State Consumer Commission</div>
+      <div class="court-tag">Family Courts</div>
+      <div class="court-tag">Debt Recovery Tribunal</div>
+      <div class="court-tag">Rent Controller Courts</div>
+      <div class="court-tag">Motor Accident Claims Tribunal</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <span class="section-label">Get In Touch</span>
+      <h2 class="section-title">Schedule a <em>Consultation</em></h2>
+      <div class="contact-info">
+        <div class="contact-row">
+          <div class="contact-icon">📍</div>
+          <div class="contact-detail">
+            <h5>Office</h5>
+            <p>Pulkit Sanghi & Associates<br>New Delhi, India</p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">⚖</div>
+          <div class="contact-detail">
+            <h5>Bar Enrolment</h5>
+            <p>Bar Council of Delhi<br>Advocate — Since 2022</p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">🕐</div>
+          <div class="contact-detail">
+            <h5>Consultation Hours</h5>
+            <p>Monday – Saturday<br>10:00 AM – 6:00 PM</p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">✉</div>
+          <div class="contact-detail">
+            <h5>Email</h5>
+            <p>contact@pulkitsanghiassociates.in</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-3">
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your name">
+          </div>
+          <div class="form-field">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+91 XXXXX XXXXX">
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-field">
+          <label>Matter Type</label>
+          <select>
+            <option value="" disabled selected>Select area of concern</option>
+            <option>Civil Litigation</option>
+            <option>Criminal Defence</option>
+            <option>Matrimonial Matter</option>
+            <option>Cheque Bounce (Sec. 138)</option>
+            <option>Labour / Employment</option>
+            <option>Consumer Dispute</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Brief Description</label>
+          <textarea rows="4" placeholder="Briefly describe your legal matter..."></textarea>
+        </div>
+        <div class="form-submit">
+          <a href="#" class="btn-primary">Request Consultation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">PULKIT SANGHI & ASSOCIATES</div>
+  <div class="foot-bar-of-delhi">Enrolled, Bar Council of Delhi</div>
+  <div class="foot-copy">© 2024 Pulkit Sanghi & Associates. All rights reserved.</div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  reveals.forEach(r => observer.observe(r));
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>\
